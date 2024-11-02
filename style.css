@@ -1,0 +1,265 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+section{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#pagina-inicial{
+    background-image: url(img/concertHall.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    padding-bottom: 40px;
+    padding-top: 60px;
+}
+
+.cabecalho{
+    font-family: "Playfair Display", serif;
+    color: white;
+    border-bottom: 1px solid #FFD700;
+}
+
+.cabecalho h1 {
+    font-size: 36px;
+    margin: 0;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cabecalho {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.cabecalho p {
+    font-size: 18px;
+    color: #FFD700;
+}
+
+.menu-navegacao {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0px 6px 8px black;
+}
+
+.menu-navegacao ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-navegacao ul li {
+    display: inline;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.menu-navegacao ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#menu-conceito a:hover {
+    color: #FFD700;
+}
+
+#menu-coltrane a:hover {
+    color: #c04b97;
+}
+
+#menu-davis a:hover, #menu-album a:hover {
+    color: #2596be;
+}
+
+#menu-evans a:hover{
+    color: #c95f60;
+}
+
+#menu-topo a:hover{
+    opacity: 70%;
+    transition: opacity 0.5s ease
+}
+.menu-navegacao ul li a:hover {    
+    transition: color 0.5s ease;
+}
+#img-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    text-align: center;
+}
+
+#quartetoColtrane {
+    max-width: 50%;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.8s ease;
+}
+
+#quartetoColtrane:hover {
+    transform: scale(1.05);
+}
+
+#conceito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: left;
+}
+
+.sobre-container {
+    max-width: 50%;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: justify;
+}
+
+.quote {
+    font-family: "Great Vibes", cursive;
+    font-size: 40px;
+    color: white;
+    text-align: right;
+}
+
+#album,.sobre-artista{
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.nome{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.autorQuote {
+    font-size: 20px;
+    color: white;
+    font-family: "Playfair Display", serif;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.enfase {
+    color: #FFD700;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.artista-container {
+    max-width: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.artista-container img {
+    width: 90%;
+    height: auto;
+}
+
+.album-container img, .artista-container img {
+    border-radius: 15px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.album-container img:hover, .artista-container img:hover {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+#coltrane, #davis, #evans {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: left;
+}
+
+#nome-coltrane{
+    color: #c04b97;
+}
+
+#nome-davis{
+    color: #2596be;
+}
+
+#nome-evans{
+    color: #c95f60;
+}
+
+#nome-album{
+    color: #2596be;
+    font-weight: bolder;
+
+}
+
+#album h3{
+    font-size: 40px;
+}
+
+#album{
+    padding-top: 5px;
+}
+
+.player-container {
+    margin: 15px 0;
+}
+
+.album-container img{
+    border-radius: 15px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: auto;
+    padding: 1px;
+    font-size: 16px;
+}
+
+.sobre-container, .artista-container, .album-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.sobre-container.in-view, .artista-container.in-view, .album-container.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Linha divisória entre seções */
+section {
+    padding: 60px 0;
+    border-top: 1px solid #333;
+}
