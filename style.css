@@ -247,6 +247,22 @@ section{
     max-width: 80%;
 }
 
+.tocando-agora {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0.9;
+    z-index: 100;
+}
+
+.ambient-light {
+    background: radial-gradient(circle, rgba(20,20,20,0.9), rgba(10,10,10,0.7), black);
+    color: #c0c0c0;
+}
 
 
 @media (max-width: 1000px) {
