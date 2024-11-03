@@ -252,8 +252,8 @@ section{
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #222;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 10px;
     border-radius: 5px;
     opacity: 0.9;
@@ -335,11 +335,11 @@ section{
     }
 
     .cabecalho p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .quote {
-        font-size: 22px;
+        font-size: 28px;
     }
 
     .nome {
@@ -347,7 +347,7 @@ section{
     }
 
     .sobre-artista {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .menu-navegacao ul li {
@@ -363,8 +363,14 @@ section{
         padding: 5px;
     }
 
-    .artista-container img, .album-container img{
+    .artista-container img{
         height: 300px;
+        width: auto;
+    }
+    
+    
+    .album-container img{
+        height: 90%;
         width: auto;
     }
 
