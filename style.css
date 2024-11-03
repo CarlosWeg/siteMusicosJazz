@@ -194,7 +194,7 @@ section{
 
 .album-container img, .artista-container img {
     border-radius: 15px;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.5s ease, filter 0.5s ease;
     filter: grayscale(100%);
 }
 
@@ -244,7 +244,8 @@ section{
 .album-container img{
     border-radius: 15px;
     justify-content: center;
-    max-width: 80%;
+    max-width: 50%;
+    margin: 20px;
 }
 
 .tocando-agora {
@@ -259,9 +260,18 @@ section{
     z-index: 100;
 }
 
-.ambient-light {
-    background: radial-gradient(circle, rgba(20,20,20,0.9), rgba(10,10,10,0.7), black);
-    color: #c0c0c0;
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.album-container img.girando {
+    animation: girar 4s linear infinite;
+    filter: grayscale(0%);
 }
 
 
@@ -328,7 +338,6 @@ section{
         font-size: 16px;
     }
 
-
     .quote {
         font-size: 22px;
     }
@@ -362,4 +371,5 @@ section{
     section{
         height: auto;
     }
+    
 }

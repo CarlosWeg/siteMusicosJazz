@@ -1,22 +1,58 @@
-function mostrarTocandoAgora(nomeFaixa) {
-    const notification = document.createElement("div");
-    notification.classList.add("tocando-agora");
-    notification.innerText = `🎶 Tocando Agora: ${nomeFaixa}`;
-    document.body.appendChild(notification);
+// Fade-in nos elementos ao carregar a página
+window.onload = function() {
+    const secoes = document.querySelectorAll("section");
+    secoes.forEach((section) => {
+        section.style.opacity = 0;
+        section.style.transition = "opacity 3s";
+        section.style.opacity = 1;
+    });
+};
 
-    setTimeout(() => notification.remove(), 5000);
+// Notificação faixa tocando agora
+function mostrarNomeMusica(nomeFaixa) {
+    // Evita múltiplas notificações
+    if (document.querySelector(".tocando-agora")) return;
+
+    const notificacao = document.createElement("div");
+    notificacao.classList.add("tocando-agora");
+    notificacao.innerText = `🎶 Tocando Agora: ${nomeFaixa}`;
+    document.body.appendChild(notificacao);
+
+    setTimeout(() => notificacao.remove(), 5000);
 }
 
 const audioPlayer = document.querySelector(".player");
-audioPlayer.addEventListener("play", () => mostrarTocandoAgora("So What - Miles Davis"));
+audioPlayer.addEventListener("play", () => mostrarNomeMusica("So What - Miles Davis"));
 
-
-
-function updateNewOrleansTime() {
+// Horário em Nova Orleans
+function horarioNovaOrleans() {
     const now = new Date();
     const options = { timeZone: 'America/Chicago', hour: '2-digit', minute: '2-digit' };
     const time = now.toLocaleTimeString([], options);
-    document.getElementById("new-orleans-time").innerText = "Horário em Nova Orleans: " + time;
+    document.getElementById("nova-orleans-horario").innerText = "Horário em Nova Orleans: " + time;
 }
+setInterval(horarioNovaOrleans, 1000);
 
-setInterval(updateNewOrleansTime, 1000);
+// Mudar título do site
+const titulos = ["O que é Jazz?", "John Coltrane", "Miles Davis", "Bill Evans", "Kind of Blue"];
+
+function tituloAleatorio() {
+    const randomTitulo = titulos[Math.floor(Math.random() * titulos.length)];
+    document.title = "Descubra: " + randomTitulo;
+}
+setInterval(tituloAleatorio, 5000);
+
+// Vinil girando ao tocar música
+const vinil = document.querySelector('.album-container img');
+
+audioPlayer.addEventListener('play', () => {
+    vinil.classList.add('girando');
+});
+
+audioPlayer.addEventListener('pause', () => {
+    vinil.classList.remove('girando');
+});
+
+audioPlayer.addEventListener('ended', () => {
+    vinil.classList.remove('girando');
+});
