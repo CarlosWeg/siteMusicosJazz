@@ -3,12 +3,25 @@ body {
     padding: 0;
     background-color: black;
 }
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: min-content;
+    padding: 1px;
+    font-size: 14px;
+    font-family: "Playfair Display", serif;
+}
+
 section{
     height: 100vh;
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-top: 1px solid #333;
 }
+
 
 html {
     scroll-behavior: smooth;
@@ -21,8 +34,7 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: black;
-    padding-bottom: 40px;
-    padding-top: 60px;
+    padding: 50px 0;
 }
 
 .cabecalho{
@@ -45,7 +57,7 @@ html {
 .cabecalho {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -104,22 +116,19 @@ html {
 .menu-navegacao ul li a:hover {    
     transition: color 0.5s ease;
 }
-#img-principal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 32px;
-    text-align: center;
+
+#container-img-principal {
+    margin-top: 30px;
 }
 
-#quartetoColtrane {
-    max-width: 50%;
-    height: auto;
+
+#quarteto-coltrane {
     border-radius: 15px;
     transition: transform 0.8s ease;
+    max-width: 90%;
 }
 
-#quartetoColtrane:hover {
+#quarteto-coltrane:hover {
     transform: scale(1.05);
 }
 
@@ -142,9 +151,11 @@ html {
 
 .quote {
     font-family: "Great Vibes", cursive;
-    font-size: 40px;
-    color: white;
+    font-size: 42px;
+    color: #FFE4B5;
     text-align: right;
+    line-height: 1.4;
+
 }
 
 #album,.sobre-artista{
@@ -170,9 +181,8 @@ html {
 }
 
 .enfase {
-    color: #FFD700;
     font-size: 50px;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .artista-container {
@@ -237,15 +247,7 @@ html {
 
 .album-container img{
     border-radius: 15px;
-}
-
-footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    height: auto;
-    padding: 1px;
-    font-size: 16px;
+    justify-content: center;
 }
 
 .sobre-container, .artista-container, .album-container {
@@ -258,8 +260,91 @@ footer {
     transform: translateY(0);
 }
 
-/* Linha divisória entre seções */
-section {
-    padding: 60px 0;
-    border-top: 1px solid #333;
+@media (max-width: 1200px) {
+
+    .cabecalho h1 {
+        font-size: 28px;
+    }
+
+    .cabecalho p, .menu-navegacao ul li {
+        font-size: 16px;
+    }
+
+    #quartetoColtrane {
+        max-width: 70%;
+    }
+
+    .quote {
+        font-size: 28px;
+    }
+
+    .nome {
+        font-size: 26px;
+    }
+
+    .sobre-artista {
+        font-size: 18px;
+    }
+
+    .menu-navegacao ul {
+        flex-direction: column;
+    }
+
+    .artista-container, .album-container{
+        max-height: 70%;
+        max-height: 50%;
+        padding-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+    section{
+        height: 100vh;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .cabecalho h1 {
+        font-size: 24px;
+    }
+
+    .cabecalho p {
+        font-size: 16px;
+    }
+
+    #quartetoColtrane, .artista-container img, .album-container img {
+        max-width: 90%;
+    }
+
+    .quote {
+        font-size: 22px;
+    }
+
+    .nome {
+        font-size: 24px;
+    }
+
+    .sobre-artista {
+        font-size: 16px;
+    }
+
+    .menu-navegacao ul li {
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    #conceito, #coltrane, #davis, #evans, #album {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        padding: 5px;
+    }
+
+    section{
+        height: auto;
+    }
 }
