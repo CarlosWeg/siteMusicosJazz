@@ -4,6 +4,10 @@ body {
     background-color: black;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 footer {
     background-color: black;
     color: white;
@@ -15,16 +19,11 @@ footer {
 }
 
 section{
-    height: 100vh;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-top: 1px solid #333;
-}
-
-
-html {
-    scroll-behavior: smooth;
+    height: 100vh;
 }
 
 #pagina-inicial{
@@ -35,23 +34,34 @@ html {
     background-repeat: no-repeat;
     background-color: black;
     padding: 50px 0;
+    height: 90vh;
+    overflow: hidden;
+}
+
+#container-img-principal {
+    padding-top: 35px;
+}
+
+#quarteto-coltrane {
+    border-radius: 15px;
+    transition: transform 0.8s ease;
+    height: 80%;
+}
+
+#quarteto-coltrane:hover {
+    transform: scale(1.05);
 }
 
 .cabecalho{
     font-family: "Playfair Display", serif;
     color: white;
     border-bottom: 1px solid #FFD700;
+    height: auto;
 }
 
 .cabecalho h1 {
     font-size: 36px;
     margin: 0;
-    animation: fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 .cabecalho {
@@ -117,20 +127,6 @@ html {
     transition: color 0.5s ease;
 }
 
-#container-img-principal {
-    margin-top: 30px;
-}
-
-
-#quarteto-coltrane {
-    border-radius: 15px;
-    transition: transform 0.8s ease;
-    max-width: 90%;
-}
-
-#quarteto-coltrane:hover {
-    transform: scale(1.05);
-}
 
 #conceito {
     display: flex;
@@ -248,19 +244,29 @@ html {
 .album-container img{
     border-radius: 15px;
     justify-content: center;
+    max-width: 80%;
 }
 
-.sobre-container, .artista-container, .album-container {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.sobre-container.in-view, .artista-container.in-view, .album-container.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-@media (max-width: 1200px) {
+
+@media (max-width: 1000px) {
+
+    section{
+        scroll-margin-top: 50px;
+    }
+
+    #container-img-principal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        padding-top: 0;
+    }
+
+    #quarteto-coltrane {
+        max-width: 90%;
+        height: auto;
+    }
 
     .cabecalho h1 {
         font-size: 28px;
@@ -268,10 +274,6 @@ html {
 
     .cabecalho p, .menu-navegacao ul li {
         font-size: 16px;
-    }
-
-    #quartetoColtrane {
-        max-width: 70%;
     }
 
     .quote {
@@ -290,20 +292,15 @@ html {
         flex-direction: column;
     }
 
-    .artista-container, .album-container{
-        max-height: 70%;
-        max-height: 50%;
-        padding-top: 50px;
+    .artista-container, #album-container{
+        padding:20px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         margin: 0 auto;
     }
-    section{
-        height: 100vh;
-    }
-    
+
 }
 
 @media (max-width: 600px) {
@@ -315,9 +312,6 @@ html {
         font-size: 16px;
     }
 
-    #quartetoColtrane, .artista-container img, .album-container img {
-        max-width: 90%;
-    }
 
     .quote {
         font-size: 22px;
@@ -342,6 +336,11 @@ html {
         padding: 20px;
         text-align: center;
         padding: 5px;
+    }
+
+    .artista-container img, .album-container img{
+        height: 300px;
+        width: auto;
     }
 
     section{
