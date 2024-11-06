@@ -35,22 +35,6 @@ section{
 }
 
 
-.quote {
-    animation: fadeInUp 1.5s ease;
-}
-
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
 #pagina-inicial{
     background-image: url(img/concertHall.png);
     background-position: center;
@@ -192,7 +176,7 @@ section{
     font-size: 40px;
     font-weight: bolder;
     opacity: 0;
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 3s ease, transform 3s ease;
     transform: translateY(20px);
 }
 
