@@ -2,9 +2,7 @@
 window.onload = function() {
     const secoes = document.querySelectorAll("section");
     secoes.forEach((section) => {
-        section.style.opacity = 0;
-        section.style.transition = "opacity 3s";
-        section.style.opacity = 1;
+        section.classList.add("fade-in");
     });
 };
 
@@ -55,4 +53,15 @@ audioPlayer.addEventListener('pause', () => {
 
 audioPlayer.addEventListener('ended', () => {
     vinil.classList.remove('girando');
+});
+
+//Transição nome
+const nomes = document.querySelectorAll('.nome');
+window.addEventListener('scroll', () => {
+    nomes.forEach(nome => {
+        const rect = nome.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            nome.classList.add('aparecendo');
+        }
+    });
 });

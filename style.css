@@ -8,6 +8,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 footer {
     background-color: black;
     color: white;
@@ -16,6 +17,7 @@ footer {
     padding: 1px;
     font-size: 14px;
     font-family: "Playfair Display", serif;
+    width: 99%;
 }
 
 section{
@@ -24,7 +26,30 @@ section{
     text-align: center;
     border-top: 1px solid #333;
     height: 100vh;
+    opacity: 0;
+    transition: opacity 3s;
 }
+
+.fade-in {
+    opacity: 1;
+}
+
+
+.quote {
+    animation: fadeInUp 1.5s ease;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 #pagina-inicial{
     background-image: url(img/concertHall.png);
@@ -74,6 +99,7 @@ section{
 .cabecalho p {
     font-size: 18px;
     color: #FFD700;
+    text-shadow: 3px 3px 9px #7a4e00;
 }
 
 .menu-navegacao {
@@ -127,7 +153,6 @@ section{
     transition: color 0.5s ease;
 }
 
-
 #conceito {
     display: flex;
     align-items: center;
@@ -166,6 +191,13 @@ section{
 .nome{
     font-size: 40px;
     font-weight: bolder;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: translateY(20px);
+}
+
+.nome.aparecendo {
+    opacity: 1;
 }
 
 .autorQuote {
@@ -192,15 +224,26 @@ section{
     height: auto;
 }
 
+.quote {
+    font-family: "Great Vibes", cursive;
+    font-size: 42px;
+    color: #FFE4B5;
+    text-align: right;
+    line-height: 1.4;
+    text-shadow: 3px 3px 9px #7a4e00;
+}
+
 .album-container img, .artista-container img {
     border-radius: 15px;
-    transition: transform 0.5s ease, filter 0.5s ease;
-    filter: grayscale(100%);
+    transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;
+    filter: grayscale(100%) brightness(1);
+    opacity: 0.8;
 }
 
 .album-container img:hover, .artista-container img:hover {
     transform: scale(1.05);
-    filter: grayscale(0%);
+    filter: grayscale(0%) brightness(1.1);
+    opacity: 1;
 }
 
 #coltrane, #davis, #evans {
@@ -213,20 +256,23 @@ section{
 
 #nome-coltrane{
     color: #c04b97;
+    text-shadow: 3px 3px 9px#77014e;
 }
 
 #nome-davis{
     color: #2596be;
+    text-shadow: 3px 3px 9px#005574;
 }
 
 #nome-evans{
     color: #c95f60;
+    text-shadow: 3px 3px 9px#8f2a2c;
 }
 
 #nome-album{
     color: #2596be;
+    text-shadow: 3px 3px 9px#015a7a;
     font-weight: bolder;
-
 }
 
 #album h3{
