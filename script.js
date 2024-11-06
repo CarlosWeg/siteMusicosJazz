@@ -1,10 +1,32 @@
 // Fade-in nos elementos ao carregar a página
-window.onload = function() {
-    const secoes = document.querySelectorAll("section");
-    secoes.forEach((section) => {
-        section.classList.add("fade-in");
+const todosElementos = document.querySelectorAll('section *:not(.nome)');
+
+todosElementos.forEach(elemento => elemento.classList.add('oculto'));
+function verificarVisibilidade() {
+    const alturaJanela = window.innerHeight;
+
+    todosElementos.forEach(elemento => {
+        const distanciaTopo = elemento.getBoundingClientRect().top;
+
+        if (distanciaTopo < alturaJanela - 80) {
+            elemento.classList.add('mostrar');
+        }
     });
-};
+}
+
+window.addEventListener('scroll', verificarVisibilidade);
+document.addEventListener('DOMContentLoaded', verificarVisibilidade);
+
+//Transição nome
+const nomes = document.querySelectorAll('.nome');
+window.addEventListener('scroll', () => {
+    nomes.forEach(nome => {
+        const rect = nome.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            nome.classList.add('aparecendo');
+        }
+    });
+});
 
 // Notificação faixa tocando agora
 function mostrarNomeMusica(nomeFaixa) {
@@ -53,15 +75,4 @@ audioPlayer.addEventListener('pause', () => {
 
 audioPlayer.addEventListener('ended', () => {
     vinil.classList.remove('girando');
-});
-
-//Transição nome
-const nomes = document.querySelectorAll('.nome');
-window.addEventListener('scroll', () => {
-    nomes.forEach(nome => {
-        const rect = nome.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-            nome.classList.add('aparecendo');
-        }
-    });
 });

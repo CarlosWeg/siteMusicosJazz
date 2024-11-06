@@ -26,12 +26,7 @@ section{
     text-align: center;
     border-top: 1px solid #333;
     height: 100vh;
-    opacity: 0;
     transition: opacity 3s;
-}
-
-.fade-in {
-    opacity: 1;
 }
 
 
@@ -181,11 +176,11 @@ section{
     align-items: center;
 }
 
-.nome{
+.nome {
     font-size: 40px;
     font-weight: bolder;
     opacity: 0;
-    transition: opacity 2s ease;
+    transition: opacity 4s ease;
 }
 
 .nome.aparecendo {
@@ -307,7 +302,13 @@ section{
     filter: grayscale(0%);
 }
 
-
+.oculto {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+.mostrar {
+    opacity: 1;
+}
 
 @media (max-width: 1000px) {
 
