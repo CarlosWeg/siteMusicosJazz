@@ -180,7 +180,7 @@ section{
     font-size: 40px;
     font-weight: bolder;
     opacity: 0;
-    transition: opacity 4s ease;
+    transition: opacity 4s ease-out;
 }
 
 .nome.aparecendo {
@@ -304,7 +304,7 @@ section{
 
 .oculto {
     opacity: 0;
-    transition: opacity 0.8s ease-out;
+    transition: opacity 1s ease-out;
 }
 .mostrar {
     opacity: 1;
