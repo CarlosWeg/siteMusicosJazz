@@ -172,12 +172,20 @@ section{
     letter-spacing: 0.5px;
 }
 
+#album {
+    height: auto;
+    padding: 50px 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .nome{
     font-size: 40px;
     font-weight: bolder;
     opacity: 0;
-    transition: opacity 3s ease, transform 3s ease;
-    transform: translateY(20px);
+    transition: opacity 2s ease;
 }
 
 .nome.aparecendo {
@@ -263,19 +271,14 @@ section{
     font-size: 40px;
 }
 
-#album{
-    padding-top: 5px;
-}
 
 .player-container {
     margin: 15px 0;
 }
 
 .album-container img{
-    border-radius: 15px;
-    justify-content: center;
-    max-width: 50%;
-    margin: 20px;
+    width: 90%;
+    height: auto;
 }
 
 .tocando-agora {
@@ -303,6 +306,7 @@ section{
     animation: girar 4s linear infinite;
     filter: grayscale(0%);
 }
+
 
 
 @media (max-width: 1000px) {
@@ -400,8 +404,8 @@ section{
     
     
     .album-container img{
-        height: 90%;
-        width: auto;
+        max-width: 50%;
+        height: auto;
     }
 
     section{
