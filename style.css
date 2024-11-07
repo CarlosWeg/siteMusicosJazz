@@ -29,7 +29,6 @@ section{
     transition: opacity 3s;
 }
 
-
 #pagina-inicial{
     background-image: url(img/concertHall.png);
     background-position: center;
@@ -44,6 +43,10 @@ section{
 
 #container-img-principal {
     padding-top: 35px;
+}
+
+.container-kind {
+    position: relative;
 }
 
 #quarteto-coltrane {
@@ -220,14 +223,29 @@ section{
     text-shadow: 3px 3px 9px #7a4e00;
 }
 
-.album-container img, .artista-container img {
-    border-radius: 15px;
-    transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;
+#miles-trompete {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 600px;
+    transition: filter 0.5s ease, opacity 0.5s ease;
     filter: grayscale(100%) brightness(1);
     opacity: 0.8;
 }
 
-.album-container img:hover, .artista-container img:hover {
+#miles-trompete:hover{
+    filter: grayscale(0%) brightness(1.1);
+    opacity: 1;
+}
+
+.album-container img, .artista-container img {
+    border-radius: 15px;
+    transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+    filter: grayscale(100%) brightness(1);
+    opacity: 0.8;
+}
+
+ .album-container img:hover, .artista-container img:hover {
     transform: scale(1.05);
     filter: grayscale(0%) brightness(1.1);
     opacity: 1;
@@ -322,6 +340,10 @@ section{
         align-items: center;
         height: 90vh;
         padding-top: 0;
+    }
+
+    #miles-trompete {
+        display: none;
     }
 
     #quarteto-coltrane {
