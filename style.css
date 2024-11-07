@@ -8,7 +8,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 footer {
     background-color: black;
     color: white;
@@ -42,15 +41,11 @@ section{
 }
 
 #container-img-principal {
-    padding-top: 35px;
-}
-
-.container-kind {
-    position: relative;
-}
-
-.menu-navegacao a.active {
-    color: #FFD700;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    height: 100%;
 }
 
 #quarteto-coltrane {
@@ -58,6 +53,7 @@ section{
     transition: transform 0.8s ease;
     height: 80%;
 }
+
 
 #quarteto-coltrane:hover {
     transform: scale(1.05);
@@ -86,6 +82,10 @@ section{
     font-size: 18px;
     color: #FFD700;
     text-shadow: 3px 3px 9px #7a4e00;
+}
+
+.menu-navegacao a.active {
+    color: #FFD700;
 }
 
 .menu-navegacao {
@@ -134,7 +134,7 @@ section{
 
 #menu-topo a:hover{
     opacity: 70%;
-    transition: opacity 0.5s ease
+    transition: opacity 0.3s ease
 }
 
 #conceito {
@@ -170,6 +170,10 @@ section{
     margin-bottom: 15px;
     line-height: 1.6;
     letter-spacing: 0.5px;
+}
+
+.container-kind {
+    position: relative;
 }
 
 #album {
@@ -231,12 +235,12 @@ section{
     right: 0;
     height: 600px;
     transition: filter 0.5s ease, opacity 0.5s ease;
-    filter: grayscale(100%) brightness(1);
+    filter: grayscale(100%) brightness(1.1);
     opacity: 0.8;
 }
 
 #miles-trompete:hover{
-    filter: grayscale(0%) brightness(1.1);
+    filter: grayscale(0%) brightness(1.3);
     opacity: 1;
 }
 
@@ -323,7 +327,7 @@ section{
 
 .oculto {
     opacity: 0;
-    transition: opacity 1s ease-out;
+    transition: opacity 1.5s ease-out;
 }
 .mostrar {
     opacity: 1;
@@ -331,16 +335,22 @@ section{
 
 @media (max-width: 1000px) {
 
-    section{
-        scroll-margin-top: 50px;
-    }
-
-    #container-img-principal {
+    .artista-container, #album-container{
+        padding:30px;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 90vh;
-        padding-top: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #container-img-principal {
+        align-items: center;
+        padding-top: 0px;
+    }
+
+    section{
+        scroll-margin-top: 50px;
     }
 
     #miles-trompete {
@@ -348,24 +358,20 @@ section{
     }
 
     #quarteto-coltrane {
-        max-width: 90%;
-        height: auto;
+        width: 70%;
+        height: fit-content;
     }
 
-    .cabecalho h1 {
-        font-size: 28px;
+    .cabecalho h1, .nome, #album h3{
+        font-size: 32px;
     }
 
     .cabecalho p, .menu-navegacao ul li {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .quote {
-        font-size: 28px;
-    }
-
-    .nome {
-        font-size: 26px;
+        font-size: 30px;
     }
 
     .sobre-artista {
@@ -376,41 +382,12 @@ section{
         flex-direction: column;
     }
 
-    .artista-container, #album-container{
-        padding:20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 0 auto;
-    }
-
 }
 
-@media (max-width: 600px) {
-    .cabecalho h1 {
-        font-size: 24px;
-    }
+@media (max-width: 650px) {
 
-    .cabecalho p {
-        font-size: 18px;
-    }
-
-    .quote {
-        font-size: 28px;
-    }
-
-    .nome {
-        font-size: 24px;
-    }
-
-    .sobre-artista {
-        font-size: 18px;
-    }
-
-    .menu-navegacao ul li {
-        font-size: 14px;
-        margin: 5px;
+    section{
+        height: auto;
     }
 
     #conceito, #coltrane, #davis, #evans, #album {
@@ -418,7 +395,6 @@ section{
         align-items: center;
         padding: 20px;
         text-align: center;
-        padding: 5px;
     }
 
     .artista-container img{
@@ -426,14 +402,13 @@ section{
         width: auto;
     }
     
-    
     .album-container img{
         max-width: 50%;
         height: auto;
     }
 
-    section{
-        height: auto;
+    #quarteto-coltrane{
+        width: 90%;
     }
     
 }
