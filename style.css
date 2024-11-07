@@ -49,6 +49,10 @@ section{
     position: relative;
 }
 
+.menu-navegacao a.active {
+    color: #FFD700;
+}
+
 #quarteto-coltrane {
     border-radius: 15px;
     transition: transform 0.8s ease;
@@ -109,9 +113,10 @@ section{
 .menu-navegacao ul li a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-#menu-conceito a:hover {
+#menu-conceito a:hover, #menu-conceito a.active {
     color: #FFD700;
 }
 
@@ -130,9 +135,6 @@ section{
 #menu-topo a:hover{
     opacity: 70%;
     transition: opacity 0.5s ease
-}
-.menu-navegacao ul li a:hover {    
-    transition: color 0.5s ease;
 }
 
 #conceito {

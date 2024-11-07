@@ -76,3 +76,18 @@ audioPlayer.addEventListener('pause', () => {
 audioPlayer.addEventListener('ended', () => {
     vinil.classList.remove('girando');
 });
+
+
+// Transição de Cores no Menu
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const menuLinks = document.querySelectorAll('.menu-navegacao a');
+
+    sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+            menuLinks.forEach(link => link.classList.remove('active'));
+            menuLinks[index].classList.add('active');
+        }
+    });
+});
