@@ -1,3 +1,4 @@
+/* Reset de margem e padding com background padrão */
 body {
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Estilos do rodapé */
 footer {
     background-color: black;
     color: white;
@@ -19,15 +21,16 @@ footer {
     width: 99%;
 }
 
+/* Estilos gerais das seções */
 section{
     justify-content: center;
     align-items: center;
     text-align: center;
     border-top: 1px solid #333;
     height: 100vh;
-    transition: opacity 3s;
 }
 
+/*Página Inicial*/
 #pagina-inicial{
     background-image: url(img/concertHall.png);
     background-position: center;
@@ -40,6 +43,7 @@ section{
     overflow: hidden;
 }
 
+/* Contêiner da imagem principal */
 #container-img-principal {
     display: flex;
     justify-content: center;
@@ -48,17 +52,18 @@ section{
     height: 100%;
 }
 
+/* Imagem do quarteto */
 #quarteto-coltrane {
     border-radius: 15px;
     transition: transform 0.8s ease;
     height: 80%;
 }
 
-
 #quarteto-coltrane:hover {
     transform: scale(1.05);
 }
 
+/* Cabeçalho */
 .cabecalho{
     font-family: "Playfair Display", serif;
     color: white;
@@ -84,6 +89,7 @@ section{
     text-shadow: 3px 3px 9px #7a4e00;
 }
 
+/* Menu de navegação */
 .menu-navegacao a.active {
     color: #FFD700;
 }
@@ -137,6 +143,7 @@ section{
     transition: opacity 0.3s ease
 }
 
+/* Conceito, Citação e detalhes do álbum/artista */
 #conceito {
     display: flex;
     align-items: center;
@@ -229,13 +236,14 @@ section{
     text-shadow: 3px 3px 9px #7a4e00;
 }
 
+/* Imagem canto inferior direito */
 #miles-trompete {
     position: absolute;
     bottom: 0;
     right: 0;
     height: 600px;
     transition: filter 0.5s ease, opacity 0.5s ease;
-    filter: grayscale(100%) brightness(1.1);
+    filter: grayscale(100%) brightness(1);
     opacity: 0.8;
 }
 
@@ -244,6 +252,7 @@ section{
     opacity: 1;
 }
 
+/* Animações para as imagens*/
 .album-container img, .artista-container img {
     border-radius: 15px;
     transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
@@ -253,10 +262,11 @@ section{
 
  .album-container img:hover, .artista-container img:hover {
     transform: scale(1.05);
-    filter: grayscale(0%) brightness(1.1);
+    filter: grayscale(0%) brightness(1.2);
     opacity: 1;
 }
 
+/* Seções dos artistas*/
 #coltrane, #davis, #evans {
     display: flex;
     align-items: center;
@@ -265,6 +275,7 @@ section{
     text-align: left;
 }
 
+/*Cores dos nomes de artistas e album*/
 #nome-coltrane{
     color: #c04b97;
     text-shadow: 3px 3px 9px#77014e;
@@ -299,6 +310,7 @@ section{
     height: auto;
 }
 
+/* Notificação tocando agora */
 .tocando-agora {
     position: fixed;
     bottom: 20px;
@@ -311,6 +323,7 @@ section{
     z-index: 100;
 }
 
+/* Animação de rotação no disco */
 @keyframes girar {
     from {
         transform: rotate(0deg);
@@ -325,6 +338,7 @@ section{
     filter: grayscale(0%);
 }
 
+/* Efeitos de Fade nos elementos ao carregar a página */
 .oculto {
     opacity: 0;
     transition: opacity 1.5s ease-out;
@@ -333,6 +347,7 @@ section{
     opacity: 1;
 }
 
+/* Estilos responsivos para telas médias */
 @media (max-width: 1000px) {
 
     .artista-container, #album-container{
@@ -384,6 +399,7 @@ section{
 
 }
 
+/* Estilos responsivos para telas pequenas */
 @media (max-width: 650px) {
 
     section{

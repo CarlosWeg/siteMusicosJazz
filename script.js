@@ -1,4 +1,4 @@
-// Fade-in nos elementos ao carregar a página
+// Fade nos elementos ao carregar a página
 const todosElementos = document.querySelectorAll('section *:not(.nome)');
 
 todosElementos.forEach(elemento => elemento.classList.add('oculto'));
